@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+    <link rel="stylesheet" href="lib/index.css">
+    
+    <script src="lib/taser.js"></script>
+    <script src="lib/utils.js"></script>  
+    <script src="lib/view_models.js"></script>    
+    <script src="lib/knockout-3.3.0.js"></script>
+    
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse bg-light">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <span>Neighborhood Maps</span>
+          </div>
+        </div>
+        <div class="navform navbar-right ">
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle dropleft" style="display:flex" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">        
+                    Menu DropDown       
+                </button>
+                <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <li>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="q" data-bind="textInput: searchQuery, valueUpdate: 'afterkeydown'" style="width:100%">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <ul class="scrollable-menu list-group">
+                            <div  data-bind="foreach: locationList">
+                                <a href="#" class="list-group-item list-group-item-action" data-bind="text: title, click: show"></a>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>       
+      </div>
+    </nav>
+    <div>
+        <article>
+            <div id="map" ></div>
+        </article>
+    </div>
+    
+    </body>
+    <script src="lib/map_utils.js"></script>    
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyDOf5W07DLUzcQreXIijq6mlR9DfkM5_O4&callback=render" >
+    </script>
+</html>
+

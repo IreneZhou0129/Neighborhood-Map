@@ -1,6 +1,7 @@
 #  NEIGHBORHOOD_MAP
 
 # NeighborHood Map Udacity project
+![](map_demo.gif)
 
 ## Getting Started 
 ---------
